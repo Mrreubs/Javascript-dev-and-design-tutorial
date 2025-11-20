@@ -384,3 +384,86 @@ function printScoreReport1(studentName = `joy`, studentScore = 90){
 }
 let outcome3 = printScoreReport1(`peace`, 69)
 console.log(outcome3)
+
+
+
+
+// data types
+// there are different types of data types in javascript e.g string, number, boolean, object, undefined, null, symbol, bigint
+// but they are categorized into two main groups
+// (1) primitive data types which means simple basic data types 
+// (2) reference / non-primitive data types which means the combination of different basic data types to form a complex data type e.g object literal, array, function etc
+
+
+// undefined data type are data types that have not been assigned any value
+let studentName1;
+console.log(studentName1);
+
+// null data type means empty data type
+let studentName2 = null;
+console.log(studentName2);
+
+
+// bigint data type is used to store large numbers that are beyond the safe integer limit for numbers in javascript
+// just add n at the end of the number to make it a bigint data type
+let largeNumber = 9007199254741991n;
+console.log(largeNumber);
+
+// symbol data type is used to create unique identifiers for objects
+let sym1 = Symbol('id');
+let sym2 = Symbol('id');
+console.log(sym1 === sym2); // false because symbols are unique
+
+
+// typeof operator is used to determine the data type of a variable or value
+let sampleName = "oluwaseyi";
+console.log(typeof sampleName); // string
+
+
+// tenary operator is a shorthand way of writing an if-else statement
+let age = 18;
+let canVote = (age >= 18) ? console.log("yes, you can vote") : console.log("no, you cannot vote");
+console.log(canVote);
+// the syntax is condition ? expressionIfTrue : expressionIfFalse
+let truth = 15 < 25 ? "youre right" : "youre wrong";
+console.log(truth);
+
+// object destructuring is a way to extract values from an object and assign them to variables
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 30
+};
+const { firstName, lastName } = person;
+console.log(firstName); // John
+console.log(lastName); // Doe       
+
+// we can also use dot notation or bracket notation to access object properties
+let ageOfPerson = person.age;
+console.log(ageOfPerson); // 30
+
+// Alias : makes a new variable name for an existing property in an object  
+const { firstName: fName, lastName: lName } = person;
+
+
+
+
+// METHODS IN JAVASCRIPT
+// methods are functions inside an object
+const carRecord3 = {
+    carName : `lexus`,
+    carColor : `blue`,
+    carModel : `civil`,
+    carVin : `3F56FSH6D8`,
+    carYear : 2018,
+    millage : `5000`,
+    roadWorthy : function() {
+       let value = 100000 - this.millage;
+       let roadW = value > 60000 ? "car is road worthy" : "car is not road worthy"
+         return roadW;
+}
+
+};
+
+let roadWorthyStatus = carRecord3.roadWorthy();
+console.log(roadWorthyStatus);
