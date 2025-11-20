@@ -467,3 +467,102 @@ const carRecord3 = {
 
 let roadWorthyStatus = carRecord3.roadWorthy();
 console.log(roadWorthyStatus);
+
+
+// destructuring nexted object literal
+const studentRecord1 = {
+    fullName : {
+        surname : `Andrew`,
+        firstName : `Benjamin`,
+        lastName : `Peter`
+    },
+    age : 14,
+    gender : `female`,
+    studentClass : `Jss3`,
+    lastSemesterResult : {
+        Mathematics : `A`,
+        English : `B`,
+        Biology : `A`,
+        TechnicalDrawing : `B`
+    }
+}   
+const { fullName: { firstName: studentFirstName, lastName: studentLastName }, lastSemesterResult: { Mathematics: mathGrade } } = studentRecord1;
+console.log(studentFirstName);
+
+
+
+
+
+
+// function expression
+// is another way to write a function
+const greet = function(name) {
+    return `Hello, ${name}!`;
+}
+let greeting = greet("Oluwaseyi");
+console.log(greeting);
+
+const addTwoNumbers = function(a,b) {
+    return a + b
+}
+
+let sum = addTwoNumbers(5, 25)
+console.log(sum)
+
+
+
+// arrow function
+// is a shorter way to write a function expression
+// ()=> {}
+
+const sayUserName = (userName) => {
+    let said = `Your username, ${userName}!`
+    console.log(said)
+}
+sayUserName("benjamin25")
+
+const multiplyNumbers = (num1, num2) => {
+    return num1 * num2
+}
+let product = multiplyNumbers(4, 5)
+console.log(product)
+
+const squareNumber = num => num * num
+let squared = squareNumber(6)
+console.log(squared)
+
+
+
+
+// arrays in javascript
+// arrays are used to store multiple values in a single variable
+// arrays are created using square brackets []
+// arrays can store different data types e.g string, number, boolean, object, function etc
+// arrays is a data structure that allows us to list multiple items/data in a single variable
+// square brackets [] are used to create an array
+// array items are separated by commas ,
+
+const fruits = ["apple", "banana", "orange", "mango"];
+console.log(fruits);
+
+// index position in an array
+// arrays are zero indexed, which means the first item in an array is at index position 0, the second item is at index position 1, and so on
+
+// how to access array items using index position
+(fruits[0])
+console.log(fruits[0]); // apple
+
+(fruits[2])
+console.log(fruits[2]); // orange
+
+
+// how to change or update array items using index position
+fruits[1] = "grape";
+console.log(fruits); // ["apple", "grape", "orange", "mango"]
+
+
+// length property in arrays
+// just add .length after the array name to get the number of items in the array
+let numberOfFruits = fruits.length;
+console.log(numberOfFruits); // 4
+
