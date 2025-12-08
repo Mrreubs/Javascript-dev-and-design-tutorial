@@ -1,3 +1,5 @@
+const { forwardRef } = require("react");
+
 let names = "ben";
 names = 10;
 names = "oluwaseyi";
@@ -565,4 +567,150 @@ console.log(fruits); // ["apple", "grape", "orange", "mango"]
 // just add .length after the array name to get the number of items in the array
 let numberOfFruits = fruits.length;
 console.log(numberOfFruits); // 4
+
+// object literals in arrays
+const students = [
+    {
+        name: "John",
+        age: 20
+    },
+    {
+        name: "Jane",
+        age: 22
+    },
+    {
+        name: "Jim",
+        age: 21
+    }
+];      
+// accessing object literals in arrays
+let result1 = students[1].name // Jane
+console.log(result1);
+
+// reassigning object literals in arrays
+students[0].age = 21
+console.log(students[0]);
+
+
+// new example
+const cars = [ "Toyota", "Honda", "Ford", "Chevrolet" ];
+cars[2] = "Nissan";
+console.log(cars); // ["Toyota", "Honda", "Nissan", "Chevrolet"]
+
+let result2 = cars[3]
+console.log(result2); // Chevrolet
+
+
+let count = cars.length
+console.log(count); // 4
+
+
+// ARRAY METHODS
+// array methods are built-in functions that can be used to manipulate arrays
+
+// 1. push() method
+// is used to add one or more items to the end of an array
+cars.push("BMW");
+console.log(cars); // ["Toyota", "Honda", "Nissan", "Chevrolet", "BMW"]
+
+// 2. pop() method
+// is used to remove the last item from an array
+cars.pop();
+console.log(cars); // ["Toyota", "Honda", "Nissan", "Chevrolet"]
+
+// 3. unshift() method
+// is used to add one or more items to the beginning of an array
+cars.unshift("Mercedes");
+console.log(cars); // ["Mercedes", "Toyota", "Honda", "Nissan", "Chevrolet"]
+
+// 4. shift() method
+// is used to remove the first item from an array
+cars.shift();
+console.log(cars); // ["Toyota", "Honda", "Nissan", "Chevrolet"]
+
+// 5. indexOf() method
+// is used to find the index position of an item in an array
+let index = cars.indexOf("Nissan");
+console.log(index); // 2
+
+// 6. INCLUDES() method
+// is used to check if an item exists in an array
+let hasFord = cars.includes("Ford");
+console.log(hasFord); // false
+
+console.log(typeof cars); // object
+
+// 7. concat method
+// is used to merge two or more arrays
+const moreCars = ["Audi", "Volkswagen"];
+const allCars = cars.concat(moreCars);
+console.log(allCars); // ["Toyota", "Honda", "Nissan", "Chevrolet", "Audi", "Volkswagen"]
+
+
+// 8. slice () method
+// cuts out part of your array yet keps your arrayn content intact
+// the first number in the bracket is where the slice starts from and the next number after a comma is where the slice ends
+
+const arayOfcontry = ["nigeria", "usa", "uk", "ghana", "england", "niger", "cameroon", "finland"]
+let country = arayOfcontry.slice(1, 4)
+console.log(country)
+
+console.log(arayOfcontry)
+
+
+// splice() method
+// the same with slice but the difference is that the item you splice will not be in the original array anymore
+// another difference is that the first number in the bracket specify wher the splicing starts from while the second number specify how many iten you want to splice
+
+let country1 = arayOfcontry.splice(3, 1)
+console.log(country1)
+console.log(arayOfcontry)
+
+
+// join() method
+// is used to turn eerything in the array to become a string
+// just add a double qoute "" into the bracket to turn thm to string then add comma , into the double quote  to use comma and seperat the word
+
+let result3 = arayOfcontry.join(", ")
+console.log(result3)
+
+// reverse() method
+// used to reverse the line up of your array, the first becomes the last and the last becomes the first, its like reading from the back 
+
+let result4 = arayOfcontry.reverse()
+console.log(result4)
+
+// sort() method
+// used for sorting the items in the array
+
+let country2 = arayOfcontry.sort()
+console.log(country2)
+
+// add a condition to the sort in the bracket
+
+
+//  LOOPS
+// repeating a circle until there a stop condition
+// we use loops to run through an array an extracts data out of the array and diplay them on the user interface
+
+const arrayOfState = ["ogun", "lagos", "benue", "enugu", "oyo", "riers", "sokoto", "adamawa"]
+console.log(arrayOfState)
+
+// types of loops in javascript
+// 1. For loop described as (for everytime i loop over an array)
+// written as
+// for(){
+
+// }
+
+// rules
+// initialise, 
+
+for(let x = 0; x < 3; x++) {
+   let answer = arrayOfState[x]
+   console.log(answer)
+}
+
+// means, let x be 0,let the loop start runing with x as 0, then, x < 3 means as long x is less than 3 let the loop keep running, then x++, means for every loop run increase x by 1 so that ehen it equals to 3 the loops stop
+
 
